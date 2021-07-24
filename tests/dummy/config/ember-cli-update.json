@@ -12,6 +12,15 @@
           "isBaseBlueprint": true
         }
       ]
+    },
+    {
+      "name": "ember-addon-automated-ci",
+      "version": "1.0.3",
+      "blueprints": [
+        {
+          "name": "ember-addon-automated-ci"
+        }
+      ]
     }
   ]
 }
