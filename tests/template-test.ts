@@ -24,8 +24,6 @@ module('useArrayMap | rendering', function (hooks) {
     }
 
     class Test extends Component<{ ctx: Context }> {
-      step = step;
-
       stuff = useArrayMap(this, {
         data: () => {
           assert.step('evaluate data thunk');
@@ -40,10 +38,13 @@ module('useArrayMap | rendering', function (hooks) {
       });
     }
 
+    // Ember 3.25 and 3.26 were unwilling to accept a `this.step` on the component
+    this.owner.register('helper:step', step);
+
     setComponentTemplate(
       hbs`
         {{#each this.stuff as |wrapped|}}
-          {{this.step (concat "each loop - id:" wrapped.record.id)}}
+          {{step (concat "each loop - id:" wrapped.record.id)}}
           <output>{{wrapped.record.id}}</output>
         {{/each}}
       `,
