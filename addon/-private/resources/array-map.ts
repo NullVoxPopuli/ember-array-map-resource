@@ -49,11 +49,17 @@ export class TrackedArrayMap<Element extends object, MappedTo> extends Lifecycle
 
     return {
       next: () => {
-        let value = this.at(i++);
+        if (i >= this.length) {
+          return { done: true };
+        }
+
+        let value = this.at(i);
+
+        i++;
 
         return {
           value,
-          done: i > this.length,
+          done: false,
         };
       },
     };

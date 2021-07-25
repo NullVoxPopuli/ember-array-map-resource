@@ -5,6 +5,10 @@ import { TrackedArrayMap } from './-private/resources/array-map';
 
 import type { ArrayMapOptions } from './-private/resources/array-map';
 
+interface ProxiedTrackedArrayMap<Element extends object, MapTo> extends TrackedArrayMap<Element, MapTo> {
+  [index: number]: MapTo;
+}
+
 /**
  * Reactivily apply a `map` function to each element in an array,
  * persisting map-results for each object, based on identity.
@@ -31,7 +35,7 @@ export function useArrayMap<Element extends object, MapTo>(
   destroyable: object,
   { map, data }: ArrayMapOptions<Element, MapTo>
 ) {
-  let resource = useResource(destroyable, TrackedArrayMap, () => {
+  let resource = useResource<TrackedArrayMap<Element, MapTo>>(destroyable, TrackedArrayMap, () => {
     let reified = data();
 
     return { positional: [reified], named: { map } };
@@ -52,5 +56,5 @@ export function useArrayMap<Element extends object, MapTo>(
 
       return Reflect.get(target, property, receiver);
     },
-  });
+  }) as unknown as ProxiedTrackedArrayMap<Element, MapTo>;
 }
