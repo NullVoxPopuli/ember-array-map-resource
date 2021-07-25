@@ -1,4 +1,4 @@
-import { TrackedObject } from 'tracked-built-ins';
+import { tracked } from '@glimmer/tracking';
 
 export class Wrapper {
   constructor(public record: unknown) {}
@@ -9,6 +9,15 @@ export interface TestRecord {
   someProp?: string;
 }
 
+class ExampleTrackedThing {
+  @tracked declare id: number;
+  @tracked someValue = '';
+
+  constructor(id: number) {
+    this.id = id;
+  }
+}
+
 export function testData(id: number) {
-  return new TrackedObject({ id, someValue: '' });
+  return new ExampleTrackedThing(id);
 }

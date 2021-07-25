@@ -108,7 +108,6 @@
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
     "semantic-release": "^17.4.4",
-    "tracked-built-ins": "^1.1.1",
     "typescript": "^4.3.5",
     "webpack": "^5.46.0"
   },
