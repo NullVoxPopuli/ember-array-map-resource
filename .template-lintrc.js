@@ -2,4 +2,6 @@
 
 module.exports = {
   extends: 'recommended',
+
+  ignore: ['tests/dummy/**'],
 };

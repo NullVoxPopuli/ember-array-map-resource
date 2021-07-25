@@ -74,7 +74,11 @@ export default class MyComponent extends Component {
 NOTE: `each` performance is handled by ember, and tweaks to its behavior can be tweaked.
 SEE: https://guides.emberjs.com/release/components/looping-through-lists/
 
-The above example could be acheived with inline-helpers and without a resource via:
+NOTE: `useArrayMap` will have (very slightly) higher initial rendering time.
+It's not meant to be faster than properly managed vanilla arrays.
+`useArrayMap`'s purpose is for making it harder for users to de-optimize their iteration.
+
+The above example could be achieved with inline-helpers and without a resource via:
 
 ```js
 import Component from '@glimmer/component';

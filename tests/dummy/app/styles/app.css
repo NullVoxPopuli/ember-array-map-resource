@@ -1,0 +1,6 @@
+.one-line {
+  display: block;
+  overflow: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

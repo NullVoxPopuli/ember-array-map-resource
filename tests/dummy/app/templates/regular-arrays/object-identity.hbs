@@ -1,0 +1,12 @@
+{{#let (service 'array') as |ctx|}}
+
+  <div class="one-line">
+    {{#each ctx.records as |record|}}
+      {{record.id}}
+      {{log record.id}}
+    {{/each}}
+  </div>
+
+{{/let}}
+
+

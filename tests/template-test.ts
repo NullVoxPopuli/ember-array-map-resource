@@ -42,8 +42,8 @@ module('useArrayMap | rendering', function (hooks) {
 
     setComponentTemplate(
       hbs`
-        {{#each this.stuff as |wrapped index|}}
-          {{this.step (concat "each loop - id:" wrapped.record.id " @ idx:" index)}}
+        {{#each this.stuff as |wrapped|}}
+          {{this.step (concat "each loop - id:" wrapped.record.id)}}
           <output>{{wrapped.record.id}}</output>
         {{/each}}
       `,
@@ -63,13 +63,13 @@ module('useArrayMap | rendering', function (hooks) {
     ctx.records = [testData(1)];
     await settled();
     assert.dom('output').exists({ count: 1 });
-    assert.verifySteps(['evaluate data thunk', 'perform map on 1', 'each loop - id:1 @ idx:0']);
+    assert.verifySteps(['evaluate data thunk', 'perform map on 1', 'each loop - id:1']);
 
     // Add second element
     ctx.records = [...ctx.records, testData(2)];
     await settled();
     assert.dom('output').exists({ count: 2 });
-    assert.verifySteps(['evaluate data thunk', 'perform map on 2', 'each loop - id:2 @ idx:1']);
+    assert.verifySteps(['evaluate data thunk', 'perform map on 2', 'each loop - id:2']);
 
     // Add two elements at once
     ctx.records = [...ctx.records, testData(3), testData(4)];
@@ -79,8 +79,8 @@ module('useArrayMap | rendering', function (hooks) {
       'evaluate data thunk',
       'perform map on 3',
       'perform map on 4',
-      'each loop - id:3 @ idx:2',
-      'each loop - id:4 @ idx:3',
+      'each loop - id:3',
+      'each loop - id:4',
     ]);
 
     // Change one of the elements
@@ -88,7 +88,7 @@ module('useArrayMap | rendering', function (hooks) {
     await settled();
     assert.dom('output').exists({ count: 4 }, 'number of each iterations remains');
     assert.verifySteps(
-      ['evaluate data thunk', 'perform map on 5', 'each loop - id:5 @ idx:1'],
+      ['evaluate data thunk', 'perform map on 5', 'each loop - id:5'],
       'map occurs only on the new element, each loop only evaluates for the replaced element'
     );
 
@@ -96,18 +96,6 @@ module('useArrayMap | rendering', function (hooks) {
     ctx.records = [ctx.records[1], ctx.records[2], ctx.records[3]];
     await settled();
     assert.dom('output').exists({ count: 3 }, 'one less iteration');
-    assert.verifySteps(
-      [
-        'evaluate data thunk',
-        'each loop - id:5 @ idx:0',
-        'each loop - id:3 @ idx:1',
-        'each loop - id:4 @ idx:2',
-      ],
-      'this is current behavior, but is this a bug?'
-    );
-    // -- it seems the index part of the loop is tracked data that is consumed by default, so
-    //    because the index of everything changed, the entire list re-renders.
-    //    there must be a way around that, yeah?
-    // assert.verifySteps(['evaluate data thunk'], 'no map occurs, because the VM handles removal');
+    assert.verifySteps(['evaluate data thunk'], 'no map occurs, because the VM handles removal');
   });
 });
