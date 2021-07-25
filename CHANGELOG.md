@@ -1,3 +1,15 @@
+# 1.0.0 (2021-07-25)
+
+
+### Features
+
+* initial implementation ([dd30d91](https://github.com/NullVoxPopuli/ember-array-map-resource/commit/dd30d911ae04001e114dd71855b44b1fa72b044f))
+
+
+### BREAKING CHANGES
+
+* implement useArrayMap
+
 # [3.0.0](https://github.com/NullVoxPopuli/ember-resources/compare/v2.0.1...v3.0.0) (2021-07-20)
 
 
