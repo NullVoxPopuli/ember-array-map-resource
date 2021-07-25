@@ -1,0 +1,14 @@
+{{log "useArrayMap :: Keyed by Object Identity"}}
+
+{{#let (service 'array') as |ctx|}}
+
+  <div class="one-line">
+    {{#each ctx.mappedRecords as |mappedRecord|}}
+      {{mappedRecord.id}}
+      {{log mappedRecord.id}}
+    {{/each}}
+  </div>
+
+{{/let}}
+
+

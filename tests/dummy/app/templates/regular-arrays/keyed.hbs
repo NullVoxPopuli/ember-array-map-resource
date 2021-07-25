@@ -1,0 +1,14 @@
+{{log "Array :: Keyed by id"}}
+
+{{#let (service 'array') as |ctx|}}
+
+  <div class="one-line">
+    {{#each ctx.records key="id" as |record|}}
+      {{record.id}}
+      {{log record.id}}
+    {{/each}}
+  </div>
+
+{{/let}}
+
+

@@ -1,3 +1,21 @@
-<h2 id="title">Welcome to Ember</h2>
+<nav>
+  <ul>
+    <li>
+      <LinkTo @route="regular-arrays.object-identity">array - object identity</LinkTo>
+    </li>
+    <li>
+      <LinkTo @route="regular-arrays.keyed">array - keyed</LinkTo>
+    </li>
+    <li>
+      <LinkTo @route="use-array-map.object-identity">useArrayMap - object identity</LinkTo>
+    </li>
+    <li>
+      <LinkTo @route="use-array-map.keyed">useArrayMap - keyed</LinkTo>
+    </li>
+  </ul>
+</nav>
+<hr>
 
 {{outlet}}
+
+<Controls />

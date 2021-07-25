@@ -1,0 +1,36 @@
+{{#let (service 'array') as |ctx|}}
+  <hr>
+  <p>
+    Open the browser console and watch when the log in the each loop runs
+  </p>
+
+  <button type="button" {{on 'click' ctx.removeFirst}}>Remove First</button>
+  <button type="button" {{on 'click' ctx.removeMiddle}}>Remove Middle</button>
+  <button type="button" {{on 'click' ctx.removeLast}}>Remove Last</button>
+  <br>
+  <button type="button" {{on 'click' ctx.addFirst}}>Add First</button>
+  <button type="button" {{on 'click' ctx.addMiddle}}>Add Middle</button>
+  <button type="button" {{on 'click' ctx.addLast}}>Add Last</button>
+  <br>
+  <br>
+
+  <label>
+    Item Count
+    <input
+      value={{ctx.itemCount}}
+      type="number"
+      min=4
+      {{on 'input' ctx.changeItemCount}}>
+  </label>
+  <p>
+    For large values close the browser dev tools before clicking reset.
+    (Logging takes longer than rendering)
+  </p>
+
+  {{#if ctx.renderTime}}
+    {{ctx.renderTime}} ms
+  {{/if}}
+
+  <br><br>
+  <button type="button" {{on 'click' ctx.reset}}>Reset</button>
+{{/let}}
