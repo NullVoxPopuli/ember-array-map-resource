@@ -5,9 +5,15 @@ import { TrackedArrayMap } from './-private/resources/array-map';
 
 import type { ArrayMapOptions } from './-private/resources/array-map';
 
-export interface ArrayMap<Element extends object, MapTo> extends TrackedArrayMap<Element, MapTo> {
+type IterableArrayMap<MapTo> = Iterable<MapTo> & Iterator<MapTo>;
+
+interface _ArrayMapWithIndexAccess<Element extends object, MapTo>
+  extends TrackedArrayMap<Element, MapTo> {
   [index: number]: MapTo;
 }
+
+export type ArrayMap<Element extends object, MapTo> = _ArrayMapWithIndexAccess<Element, MapTo> &
+  IterableArrayMap<MapTo>;
 
 /**
  * Reactivily apply a `map` function to each element in an array,
