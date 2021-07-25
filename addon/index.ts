@@ -5,7 +5,7 @@ import { TrackedArrayMap } from './-private/resources/array-map';
 
 import type { ArrayMapOptions } from './-private/resources/array-map';
 
-interface ProxiedTrackedArrayMap<Element extends object, MapTo> extends TrackedArrayMap<Element, MapTo> {
+export interface ArrayMap<Element extends object, MapTo> extends TrackedArrayMap<Element, MapTo> {
   [index: number]: MapTo;
 }
 
@@ -56,5 +56,5 @@ export function useArrayMap<Element extends object, MapTo>(
 
       return Reflect.get(target, property, receiver);
     },
-  }) as unknown as ProxiedTrackedArrayMap<Element, MapTo>;
+  }) as unknown as ArrayMap<Element, MapTo>;
 }
