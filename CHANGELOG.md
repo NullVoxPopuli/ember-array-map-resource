@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/NullVoxPopuli/ember-array-map-resource/compare/v1.0.5...v1.0.6) (2021-08-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-resources to v3.2.0 ([6ecf0d9](https://github.com/NullVoxPopuli/ember-array-map-resource/commit/6ecf0d95a0d1f17cb497d749ead44288f905dd1e))
+
 ## [1.0.5](https://github.com/NullVoxPopuli/ember-array-map-resource/compare/v1.0.4...v1.0.5) (2021-08-19)
 
 
