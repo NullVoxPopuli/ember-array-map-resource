@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/NullVoxPopuli/ember-array-map-resource/compare/v1.0.7...v2.0.0) (2021-09-24)
+
+
+### Features
+
+* change the records property to be the *mapped* records ([c994b69](https://github.com/NullVoxPopuli/ember-array-map-resource/commit/c994b69fb21ccff8b9dcafa24386a1f713c3248e))
+
+
+### BREAKING CHANGES
+
+* records property
+  previously, records would be the original array. that's not very useful.
+  now, records is the mapped array.
+
 ## [1.0.7](https://github.com/NullVoxPopuli/ember-array-map-resource/compare/v1.0.6...v1.0.7) (2021-09-06)
 
 
