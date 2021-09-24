@@ -59,6 +59,9 @@ module('useArrayMap', function (hooks) {
     // this tests the iterator
     currentStuff = [...instance.stuff];
 
+    assert.ok(instance.stuff.records[0] instanceof Wrapper, 'mappedRecords id:1');
+    assert.ok(instance.stuff.records[1] instanceof Wrapper, 'mappedRecords id:2');
+
     assert.strictEqual(currentStuff[0].record, first, 'object equality retained');
     assert.strictEqual(currentStuff[1].record, second, 'object equality retained');
 
