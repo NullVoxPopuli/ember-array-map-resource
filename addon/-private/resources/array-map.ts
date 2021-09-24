@@ -19,7 +19,7 @@ export class TrackedArrayMap<Element extends object, MappedTo> extends Lifecycle
   #map = new WeakMap<Element, MappedTo>();
 
   // @private
-  get #records(): Element[] {
+  get _records(): Element[] {
     return this.args.positional[0];
   }
 
@@ -30,12 +30,12 @@ export class TrackedArrayMap<Element extends object, MappedTo> extends Lifecycle
 
   // @public
   get length() {
-    return this.#records.length;
+    return this._records.length;
   }
 
   // @private
   at(i: number) {
-    let record = this.#records[i];
+    let record = this._records[i];
     let value = this.#map.get(record);
 
     if (!value) {
