@@ -23,7 +23,7 @@ export class TrackedArrayMap<Element extends object, MappedTo> extends Lifecycle
     return this.args.positional[0];
   }
 
-  // public
+  // @public
   get records() {
     return [...this];
   }
