@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/NullVoxPopuli/ember-array-map-resource/compare/v2.0.3...v2.0.4) (2021-12-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-htmlbars to ^6.0.1 ([4f2f10a](https://github.com/NullVoxPopuli/ember-array-map-resource/commit/4f2f10a724f235dc83311f0e48c02de34ce4d8e1))
+
 ## [2.0.3](https://github.com/NullVoxPopuli/ember-array-map-resource/compare/v2.0.2...v2.0.3) (2021-11-05)
 
 
