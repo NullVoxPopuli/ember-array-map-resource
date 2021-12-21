@@ -22,6 +22,7 @@ export default class ArrayService extends Service {
 
   @action addFirst() {
     log('add:first, expect one each log');
+
     let newArray = [{ id: this.records.length + 1 }, ...this.records];
 
     measureTime(
@@ -33,6 +34,7 @@ export default class ArrayService extends Service {
 
   @action addLast() {
     log('add:last, expect one each log');
+
     let newArray = [...this.records, { id: this.records.length + 1 }];
 
     measureTime(
@@ -58,6 +60,7 @@ export default class ArrayService extends Service {
 
   @action removeFirst() {
     log('first removed, expect no each logs');
+
     let [, ...rest] = this.records;
 
     measureTime(
@@ -69,6 +72,7 @@ export default class ArrayService extends Service {
 
   @action removeLast() {
     log('last removed, expect no each logs');
+
     let copy = [...this.records];
 
     copy.pop();
@@ -82,6 +86,7 @@ export default class ArrayService extends Service {
 
   @action removeMiddle() {
     log('middle removed, expect no each logs');
+
     let [, middle] = this.records;
 
     let filtered = this.records.filter((record) => record !== middle);
@@ -96,6 +101,7 @@ export default class ArrayService extends Service {
   @action reset() {
     console.log('|||||||||||||||||||||||||||||||||||||||||');
     console.time('generating new data');
+
     let fresh = freshArray(this.itemCount);
 
     console.timeEnd('generating new data');
@@ -111,6 +117,7 @@ export default class ArrayService extends Service {
 
   @action changeItemCount(e: InputEvent) {
     assert(`Expected Input`, e.target instanceof HTMLInputElement);
+
     let value = e.target.value;
 
     let num = parseInt(value, 10);
