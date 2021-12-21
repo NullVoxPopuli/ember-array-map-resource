@@ -35,14 +35,14 @@ module('useArrayMap', function (hooks) {
 
     setOwner(instance, this.owner);
 
-    assert.equal(instance.stuff.length, 0);
+    assert.strictEqual(instance.stuff.length, 0);
     assert.verifySteps(['evaluate data thunk']);
 
     let first = testData(1);
     let second = testData(2);
 
     instance.records = [first, second];
-    assert.equal(instance.stuff.length, 2, 'length adjusted');
+    assert.strictEqual(instance.stuff.length, 2, 'length adjusted');
     assert.verifySteps(
       ['evaluate data thunk'],
       'we do not map yet because the data has not been accessed'
@@ -66,7 +66,7 @@ module('useArrayMap', function (hooks) {
     assert.strictEqual(currentStuff[1].record, second, 'object equality retained');
 
     instance.records = [...instance.records, testData(3)];
-    assert.equal(instance.stuff.length, 3, 'length adjusted');
+    assert.strictEqual(instance.stuff.length, 3, 'length adjusted');
     assert.verifySteps(
       ['evaluate data thunk'],
       'we do not map on the new object yet because the data has not been accessed'
