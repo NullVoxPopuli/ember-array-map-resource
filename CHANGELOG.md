@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/NullVoxPopuli/ember-array-map-resource/compare/v2.0.4...v2.0.5) (2022-03-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-typescript to v5 ([c1cc74d](https://github.com/NullVoxPopuli/ember-array-map-resource/commit/c1cc74d6139e80859ab94eaf9f1bff91ec78a297))
+
 ## [2.0.4](https://github.com/NullVoxPopuli/ember-array-map-resource/compare/v2.0.3...v2.0.4) (2021-12-05)
 
 
