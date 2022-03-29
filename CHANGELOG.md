@@ -1,3 +1,16 @@
+# [3.0.0](https://github.com/NullVoxPopuli/ember-array-map-resource/compare/v2.0.5...v3.0.0) (2022-03-29)
+
+
+### chore
+
+* update dependencies ([27dd69b](https://github.com/NullVoxPopuli/ember-array-map-resource/commit/27dd69b611e55d4c97147059647247a4baf3581d))
+
+
+### BREAKING CHANGES
+
+* ember-auto-import@v2 is now required
+ember-resources@v4 now used
+
 ## [2.0.5](https://github.com/NullVoxPopuli/ember-array-map-resource/compare/v2.0.4...v2.0.5) (2022-03-09)
 
 
