@@ -32,7 +32,7 @@
     "ember-cli-htmlbars": "^6.0.1",
     "ember-cli-typescript": "^5.0.0",
     "ember-auto-import": "^2.4.1",
-    "ember-resources": "^4.0.0"
+    "ember-resources": "^4.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",
