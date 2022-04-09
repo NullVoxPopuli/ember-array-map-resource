@@ -1,5 +1,12 @@
 # ember-array-map-resource
 
+## DEPRECATED / NO LONGER MAINTAINED
+
+This library has been absorbed into `ember-resources`, here: 
+https://ember-resources.pages.dev/modules/util_map
+
+-----------------------------------
+
 [![npm version](https://badge.fury.io/js/ember-array-map-resource.svg)](https://badge.fury.io/js/ember-array-map-resource)
 [![CI](https://github.com/NullVoxPopuli/ember-array-map-resource/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/NullVoxPopuli/ember-array-map-resource/actions/workflows/ci.yml)
 
